@@ -160,26 +160,7 @@ const Integrations = () => {
     return appInfo.find(a => a.app === appName) || { name: appName, icon: "📱", color: "bg-gray-500" };
   };
 
-  if (!isPremium) {
-    return (
-      <DashboardLayout>
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <Card className="max-w-md text-center">
-            <CardContent className="pt-6">
-              <Sparkles className="w-16 h-16 mx-auto mb-4 text-warning" />
-              <h2 className="text-2xl font-bold mb-2">Funcionalidade Premium</h2>
-              <p className="text-muted-foreground mb-4">
-                A importação automática de dados está disponível apenas para assinantes Premium.
-              </p>
-              <Button className="gradient-accent text-accent-foreground">
-                Fazer Upgrade
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </DashboardLayout>
-    );
-  }
+  // Funcionalidade disponível para todos os usuários
 
   return (
     <DashboardLayout>

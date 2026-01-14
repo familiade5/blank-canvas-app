@@ -124,10 +124,10 @@ export const useSubscription = () => {
         .from("subscriptions")
         .select("*")
         .eq("user_id", user.id)
-        .single();
+        .maybeSingle();
       
       if (error) throw error;
-      return data as Subscription;
+      return data as Subscription | null;
     },
     enabled: !!user,
   });
