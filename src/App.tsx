@@ -16,6 +16,7 @@ import AIAdvisor from "./pages/AIAdvisor";
 import Integrations from "./pages/Integrations";
 import TaxCalculator from "./pages/TaxCalculator";
 import APIDocumentation from "./pages/APIDocumentation";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/dashboard/integrations" element={<Integrations />} />
             <Route path="/dashboard/taxes" element={<TaxCalculator />} />
             <Route path="/dashboard/api" element={<APIDocumentation />} />
+            <Route path="/dashboard/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

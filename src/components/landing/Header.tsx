@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,11 +57,11 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Button variant="ghost" size="sm">
-              Entrar
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/auth">Entrar</Link>
             </Button>
-            <Button size="sm" className="gradient-primary shadow-glow">
-              Começar Grátis
+            <Button size="sm" className="gradient-primary shadow-glow" asChild>
+              <Link to="/auth">Começar Grátis</Link>
             </Button>
           </motion.div>
 
@@ -94,11 +95,11 @@ const Header = () => {
               </a>
             ))}
             <div className="pt-4 flex flex-col gap-2">
-              <Button variant="ghost" size="sm" className="w-full">
-                Entrar
+              <Button variant="ghost" size="sm" className="w-full" asChild>
+                <Link to="/auth">Entrar</Link>
               </Button>
-              <Button size="sm" className="w-full gradient-primary shadow-glow">
-                Começar Grátis
+              <Button size="sm" className="w-full gradient-primary shadow-glow" asChild>
+                <Link to="/auth">Começar Grátis</Link>
               </Button>
             </div>
           </div>
