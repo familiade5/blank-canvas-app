@@ -2,85 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 0 0% 10%;
+    --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 152 69% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 152 69% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 10%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 50%) 0%, hsl(217, 91%, 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(152, 69%, 45%) 0%, hsl(152, 69%, 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 15%) 0%, hsl(222, 47%, 11%) 50%, hsl(217, 91%, 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 100%, 0.7) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsla(222, 47%, 11%, 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(222, 47%, 11%, 0.1), 0 2px 4px -2px hsla(222, 47%, 11%, 0.1);
+    --shadow-lg: 0 10px 15px -3px hsla(222, 47%, 11%, 0.1), 0 4px 6px -4px hsla(222, 47%, 11%, 0.1);
+    --shadow-xl: 0 20px 25px -5px hsla(222, 47%, 11%, 0.1), 0 8px 10px -6px hsla(222, 47%, 11%, 0.1);
+    --shadow-glow: 0 0 40px hsla(217, 91%, 50%, 0.3);
+    --shadow-accent-glow: 0 0 40px hsla(152, 69%, 45%, 0.3);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 30%;
-    --sidebar-primary: 0 0% 10%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 217 91% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 0% 10%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 50%;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 152 69% 50%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 95%;
+    --success: 152 69% 50%;
+    --success-foreground: 222 47% 11%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 80%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 0 0% 95%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 0% 80%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(222, 47%, 6%) 0%, hsl(217, 91%, 10%) 50%, hsl(222, 47%, 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222, 47%, 9%) 0%, hsl(222, 47%, 7%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(222, 47%, 11%, 0.9) 0%, hsla(222, 47%, 11%, 0.7) 100%);
+
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -90,6 +120,56 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-accent-glow {
+    box-shadow: var(--shadow-accent-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
