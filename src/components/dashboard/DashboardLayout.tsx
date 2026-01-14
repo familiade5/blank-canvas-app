@@ -14,6 +14,10 @@ import {
   X,
   Crown,
   Shield,
+  Bot,
+  Link2,
+  Calculator,
+  Code,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
@@ -30,6 +34,13 @@ const menuItems = [
   { icon: Target, label: "Metas", path: "/dashboard/goals" },
   { icon: BarChart3, label: "Relatórios", path: "/dashboard/reports" },
   { icon: Settings, label: "Configurações", path: "/dashboard/settings" },
+];
+
+const premiumMenuItems = [
+  { icon: Bot, label: "Consultor IA", path: "/dashboard/ai-advisor" },
+  { icon: Link2, label: "Integrações", path: "/dashboard/integrations" },
+  { icon: Calculator, label: "Impostos", path: "/dashboard/taxes" },
+  { icon: Code, label: "API", path: "/dashboard/api" },
 ];
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
@@ -169,19 +180,49 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               );
             })}
 
+            {/* Premium Menu */}
+            {isPremium && (
+              <>
+                <div className="pt-4 pb-2">
+                  <div className="flex items-center gap-2 px-4 text-xs font-semibold text-warning uppercase tracking-wider">
+                    <Crown className="w-3 h-3" />
+                    Premium
+                  </div>
+                </div>
+                {premiumMenuItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setSidebarOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                        isActive
+                          ? "bg-warning text-warning-foreground"
+                          : "text-muted-foreground hover:bg-warning/10 hover:text-warning"
+                      }`}
+                    >
+                      <item.icon className="w-5 h-5" />
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </>
+            )}
+
             {/* Admin Menu */}
             {isAdmin && (
               <Link
                 to="/dashboard/admin"
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 mt-4 ${
                   location.pathname === "/dashboard/admin"
                     ? "bg-destructive text-destructive-foreground"
                     : "text-destructive hover:bg-destructive/10"
                 }`}
               >
                 <Shield className="w-5 h-5" />
-                <span className="font-medium">Admin</span>
+                <span className="font-medium">Painel Admin</span>
               </Link>
             )}
           </nav>
