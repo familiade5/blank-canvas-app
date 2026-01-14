@@ -12,6 +12,10 @@ import Expenses from "./pages/Expenses";
 import Goals from "./pages/Goals";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
+import AIAdvisor from "./pages/AIAdvisor";
+import Integrations from "./pages/Integrations";
+import TaxCalculator from "./pages/TaxCalculator";
+import APIDocumentation from "./pages/APIDocumentation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +36,10 @@ const App = () => (
             <Route path="/dashboard/goals" element={<Goals />} />
             <Route path="/dashboard/reports" element={<Reports />} />
             <Route path="/dashboard/settings" element={<Settings />} />
+            <Route path="/dashboard/ai-advisor" element={<AIAdvisor />} />
+            <Route path="/dashboard/integrations" element={<Integrations />} />
+            <Route path="/dashboard/taxes" element={<TaxCalculator />} />
+            <Route path="/dashboard/api" element={<APIDocumentation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
